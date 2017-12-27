@@ -122,13 +122,15 @@ inline ureg countSetBits(u64 mask) {
     return count;
 }
 
+#define TURF_PREVENT_MACRO_SUBSTITUTION
+
 template <class T>
-T min(T a, T b) {
+T min TURF_PREVENT_MACRO_SUBSTITUTION(T a, T b) {
     return a < b ? a : b;
 }
 
 template <class T>
-T max(T a, T b) {
+T max TURF_PREVENT_MACRO_SUBSTITUTION(T a, T b) {
     return a > b ? a : b;
 }
 
