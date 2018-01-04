@@ -3,3 +3,4 @@ CMakeLists.txt.user
 *~
 *.bat
 /*.swp
+/turf/extra/*.swp
