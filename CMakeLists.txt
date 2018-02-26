@@ -28,7 +28,7 @@ set(TURF_WITH_EXCEPTIONS FALSE CACHE BOOL "Enable compiler support for C++ excep
 if(MSVC)
     set(TURF_WITH_SECURE_COMPILER FALSE CACHE BOOL "Enable compiler-generated security checks")
 endif()
-set(TURF_REPLACE_OPERATOR_NEW TRUE CACHE BOOL "Replace global operator new and delete to use the default Turf heap")
+set(TURF_REPLACE_OPERATOR_NEW FALSE CACHE BOOL "Replace global operator new and delete to use the default Turf heap")
 set(TURF_USE_DLMALLOC FALSE CACHE BOOL "Use DLMalloc as the default heap")
 if(TURF_USE_DLMALLOC)
     set(TURF_DLMALLOC_DEBUG_CHECKS FALSE CACHE BOOL "Enable debug checks in DLMalloc")
