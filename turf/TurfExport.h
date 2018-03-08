@@ -1,5 +1,8 @@
 #pragma once
-#if defined(TURF_USE_DLL) || defined(TURF_EXPORTS_API)
+
+#ifdef TURF_STATIC_LIB
+    #define TURF_API 
+#else
     #ifdef _WIN32
         #ifdef TURF_EXPORTS_API
             #define TURF_API __declspec(dllexport)
@@ -11,8 +14,6 @@
             #define TURF_API __attribute__ ((visibility ("default")))
         #else
             #define TURF_API
+        #endif
     #endif
 #endif
-    #define TURF_API 
-#endif
-
