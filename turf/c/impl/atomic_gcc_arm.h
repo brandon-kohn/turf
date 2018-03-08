@@ -13,6 +13,8 @@
 #ifndef TURF_C_IMPL_ATOMIC_GCC_ARM_H
 #define TURF_C_IMPL_ATOMIC_GCC_ARM_H
 
+#include <turf/TurfExport.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -82,10 +84,10 @@ TURF_C_INLINE void turf_store8Relaxed(turf_atomic8_t* object, uint8_t desired) {
 // available.
 // We need to switch to ARM mode, by calling standalone functions, to use these
 // instructions.
-uint8_t turf_compareExchange8Relaxed(turf_atomic8_t* object, uint8_t expected, uint8_t desired);
-uint8_t turf_fetchAdd8Relaxed(turf_atomic8_t* object, int8_t operand);
-uint8_t turf_fetchAnd8Relaxed(turf_atomic8_t* object, uint8_t operand);
-uint8_t turf_fetchOr8Relaxed(turf_atomic8_t* object, uint8_t operand);
+TURF_API uint8_t turf_compareExchange8Relaxed(turf_atomic8_t* object, uint8_t expected, uint8_t desired);
+TURF_API uint8_t turf_fetchAdd8Relaxed(turf_atomic8_t* object, int8_t operand);
+TURF_API uint8_t turf_fetchAnd8Relaxed(turf_atomic8_t* object, uint8_t operand);
+TURF_API uint8_t turf_fetchOr8Relaxed(turf_atomic8_t* object, uint8_t operand);
 
 #else
 TURF_C_INLINE uint8_t turf_compareExchange8Relaxed(turf_atomic8_t* object, uint8_t expected, uint8_t desired) {
@@ -208,10 +210,10 @@ TURF_C_INLINE void turf_store16Relaxed(turf_atomic16_t* object, uint16_t desired
 // available.
 // We need to switch to ARM mode, by calling standalone functions, to use these
 // instructions.
-uint16_t turf_compareExchange16Relaxed(turf_atomic16_t* object, uint16_t expected, uint16_t desired);
-uint16_t turf_fetchAdd16Relaxed(turf_atomic16_t* object, int16_t operand);
-uint16_t turf_fetchAnd16Relaxed(turf_atomic16_t* object, uint16_t operand);
-uint16_t turf_fetchOr16Relaxed(turf_atomic16_t* object, uint16_t operand);
+TURF_API uint16_t turf_compareExchange16Relaxed(turf_atomic16_t* object, uint16_t expected, uint16_t desired);
+TURF_API uint16_t turf_fetchAdd16Relaxed(turf_atomic16_t* object, int16_t operand);
+TURF_API uint16_t turf_fetchAnd16Relaxed(turf_atomic16_t* object, uint16_t operand);
+TURF_API uint16_t turf_fetchOr16Relaxed(turf_atomic16_t* object, uint16_t operand);
 
 #else
 TURF_C_INLINE uint16_t turf_compareExchange16Relaxed(turf_atomic16_t* object, uint16_t expected, uint16_t desired) {
@@ -334,10 +336,10 @@ TURF_C_INLINE void turf_store32Relaxed(turf_atomic32_t* object, uint32_t desired
 // available.
 // We need to switch to ARM mode, by calling standalone functions, to use these
 // instructions.
-uint32_t turf_compareExchange32Relaxed(turf_atomic32_t* object, uint32_t expected, uint32_t desired);
-uint32_t turf_fetchAdd32Relaxed(turf_atomic32_t* object, int32_t operand);
-uint32_t turf_fetchAnd32Relaxed(turf_atomic32_t* object, uint32_t operand);
-uint32_t turf_fetchOr32Relaxed(turf_atomic32_t* object, uint32_t operand);
+TURF_API uint32_t turf_compareExchange32Relaxed(turf_atomic32_t* object, uint32_t expected, uint32_t desired);
+TURF_API uint32_t turf_fetchAdd32Relaxed(turf_atomic32_t* object, int32_t operand);
+TURF_API uint32_t turf_fetchAnd32Relaxed(turf_atomic32_t* object, uint32_t operand);
+TURF_API uint32_t turf_fetchOr32Relaxed(turf_atomic32_t* object, uint32_t operand);
 
 #else
 TURF_C_INLINE uint32_t turf_compareExchange32Relaxed(turf_atomic32_t* object, uint32_t expected, uint32_t desired) {
@@ -449,14 +451,14 @@ TURF_C_INLINE uint32_t turf_fetchOr32Relaxed(turf_atomic32_t* object, uint32_t o
 //----------------------------------------------
 //  64-bit atomic operations
 //----------------------------------------------
-uint64_t turf_load64Relaxed(const turf_atomic64_t* object);
-void turf_store64Relaxed(turf_atomic64_t* object, uint64_t desired);
-uint64_t turf_compareExchange64Relaxed(turf_atomic64_t* object, uint64_t expected, uint64_t desired);
-uintptr_t turf_compareExchangeWeak64Relaxed(turf_atomic64_t* object, uint64_t* expected, uint64_t desired);
-uint64_t turf_exchange64Relaxed(turf_atomic64_t* object, uint64_t desired);
-uint64_t turf_fetchAdd64Relaxed(turf_atomic64_t* object, int64_t operand);
-uint64_t turf_fetchAnd64Relaxed(turf_atomic64_t* object, uint64_t operand);
-uint64_t turf_fetchOr64Relaxed(turf_atomic64_t* object, uint64_t operand);
+TURF_API uint64_t turf_load64Relaxed(const turf_atomic64_t* object);
+TURF_API void turf_store64Relaxed(turf_atomic64_t* object, uint64_t desired);
+TURF_API uint64_t turf_compareExchange64Relaxed(turf_atomic64_t* object, uint64_t expected, uint64_t desired);
+TURF_API uintptr_t turf_compareExchangeWeak64Relaxed(turf_atomic64_t* object, uint64_t* expected, uint64_t desired);
+TURF_API uint64_t turf_exchange64Relaxed(turf_atomic64_t* object, uint64_t desired);
+TURF_API uint64_t turf_fetchAdd64Relaxed(turf_atomic64_t* object, int64_t operand);
+TURF_API uint64_t turf_fetchAnd64Relaxed(turf_atomic64_t* object, uint64_t operand);
+TURF_API uint64_t turf_fetchOr64Relaxed(turf_atomic64_t* object, uint64_t operand);
 
 #ifdef __cplusplus
 } // extern "C"

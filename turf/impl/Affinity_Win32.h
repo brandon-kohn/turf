@@ -19,7 +19,7 @@
 
 namespace turf {
 
-class Affinity_Win32 {
+class TURF_API Affinity_Win32 {
 private:
     typedef ULONG_PTR AffinityMask;
     static const ureg MaxHWThreads = sizeof(AffinityMask) * 8;

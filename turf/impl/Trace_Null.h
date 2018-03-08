@@ -17,7 +17,7 @@
 
 namespace turf {
 
-struct Trace_Null {
+struct TURF_API Trace_Null {
     void dumpStats() {
     }
 

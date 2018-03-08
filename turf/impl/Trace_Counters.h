@@ -20,7 +20,7 @@ namespace turf {
 
 class TraceGroup;
 
-class Trace_Counters {
+class TURF_API Trace_Counters {
 private:
     turf::Atomic<TraceGroup*> m_firstGroup;
 
@@ -31,7 +31,7 @@ public:
     static Trace_Counters Instance; // Zero-initialized
 };
 
-class TraceGroup {
+class TURF_API TraceGroup {
 public:
     struct Counter {
         turf::Atomic<u32> count;

@@ -23,7 +23,7 @@ namespace extra {
 //  xorshift128+ generator seeded using misc. information from the environment.
 //  http://xorshift.di.unimi.it/
 //-------------------------------------
-class Random {
+class TURF_API Random {
 private:
     u64 s[2];
 

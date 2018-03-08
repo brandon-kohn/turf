@@ -18,7 +18,7 @@
 
 namespace turf {
 
-class Heap_CRT {
+class TURF_API Heap_CRT {
 public:
     class Operator {
     public:

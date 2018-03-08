@@ -28,7 +28,7 @@ struct Option {
     const char* description;
 };
 
-class Options {
+class TURF_API Options {
 private:
     const char* m_programName;
     const char* m_argString;

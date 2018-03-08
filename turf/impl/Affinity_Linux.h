@@ -21,7 +21,7 @@
 
 namespace turf {
 
-class Affinity_Linux {
+class TURF_API Affinity_Linux {
 private:
     struct CoreInfo {
         std::vector<u32> hwThreadIndexToLogicalProcessor;

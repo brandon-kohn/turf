@@ -92,31 +92,31 @@ struct malloc_state {
 };
 typedef struct malloc_state* mstate;
 
-void* dlmalloc(size_t, mstate);
-void dlfree(void*, mstate);
-void* dlcalloc(size_t, size_t, mstate);
-void* dlrealloc(void*, size_t, mstate);
-void* dlrealloc_in_place(void*, size_t, mstate);
-void* dlmemalign(size_t, size_t, mstate);
-int dlposix_memalign(void**, size_t, size_t, mstate);
-void* dlvalloc(size_t, mstate);
-int dlmallopt(int, int, mstate);
-size_t dlmalloc_footprint(mstate);
-size_t dlmalloc_max_footprint(mstate);
-size_t dlmalloc_footprint_limit(mstate);
-size_t dlmalloc_set_footprint_limit(size_t bytes, mstate);
-void** dlindependent_calloc(size_t, size_t, void**, mstate);
-void** dlindependent_comalloc(size_t, size_t*, void**, mstate);
-size_t dlbulk_free(void**, size_t n_elements, mstate);
-void* dlpvalloc(size_t, mstate);
-int dlmalloc_trim(size_t, mstate);
-void dlmalloc_stats(mstate, Stats&);
-size_t dlmalloc_usable_size(void*);
+TURF_API void* dlmalloc(size_t, mstate);
+TURF_API void dlfree(void*, mstate);
+TURF_API void* dlcalloc(size_t, size_t, mstate);
+TURF_API void* dlrealloc(void*, size_t, mstate);
+TURF_API void* dlrealloc_in_place(void*, size_t, mstate);
+TURF_API void* dlmemalign(size_t, size_t, mstate);
+TURF_API int dlposix_memalign(void**, size_t, size_t, mstate);
+TURF_API void* dlvalloc(size_t, mstate);
+TURF_API int dlmallopt(int, int, mstate);
+TURF_API size_t dlmalloc_footprint(mstate);
+TURF_API size_t dlmalloc_max_footprint(mstate);
+TURF_API size_t dlmalloc_footprint_limit(mstate);
+TURF_API size_t dlmalloc_set_footprint_limit(size_t bytes, mstate);
+TURF_API void** dlindependent_calloc(size_t, size_t, void**, mstate);
+TURF_API void** dlindependent_comalloc(size_t, size_t*, void**, mstate);
+TURF_API size_t dlbulk_free(void**, size_t n_elements, mstate);
+TURF_API void* dlpvalloc(size_t, mstate);
+TURF_API int dlmalloc_trim(size_t, mstate);
+TURF_API void dlmalloc_stats(mstate, Stats&);
+TURF_API size_t dlmalloc_usable_size(void*);
 //-----------------------------------------------------
 
 } // namespace memory_dl
 
-class Heap_DL {
+class TURF_API Heap_DL {
 private:
     memory_dl::malloc_state m_mstate;
     Mutex_LazyInit m_mutex;

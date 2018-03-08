@@ -26,7 +26,7 @@ namespace turf {
 // Iterator should only be used after logging is complete.
 // Useful for post-mortem debugging and for validating tests.
 //---------------------------------------------------------
-class Trace_MemLog {
+class TURF_API Trace_MemLog {
 public:
     struct Event {
         turf::TID::TID tid;

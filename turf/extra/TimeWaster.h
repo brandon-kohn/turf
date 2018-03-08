@@ -21,7 +21,7 @@ namespace extra {
 //-------------------------------------
 //  TimeWaster
 //-------------------------------------
-class TimeWaster {
+class TURF_API TimeWaster {
 private:
     static const u32 ArraySize = 65521;
     static u32 s_randomValues[ArraySize];

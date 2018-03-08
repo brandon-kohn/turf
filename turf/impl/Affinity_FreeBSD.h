@@ -20,7 +20,7 @@
 
 namespace turf {
 
-class Affinity_FreeBSD {
+class TURF_API Affinity_FreeBSD {
 private:
     struct CoreInfo {
         std::vector<u32> hwThreadIndexToLogicalProcessor;
