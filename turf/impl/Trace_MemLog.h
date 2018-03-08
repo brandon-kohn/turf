@@ -131,7 +131,7 @@ public:
 
 } // namespace turf
 
-#define TURF_TRACE_DECLARE(group, count)
+#define TURF_TRACE_DECLARE(api, group, count)
 #define TURF_TRACE_DEFINE_BEGIN(group, count)
 #define TURF_TRACE_DEFINE(desc)
 #define TURF_TRACE_DEFINE_END(group, count)

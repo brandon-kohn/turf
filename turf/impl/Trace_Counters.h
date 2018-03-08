@@ -55,7 +55,7 @@ public:
 };
 
 // clang-format off
-#define TURF_TRACE_DECLARE(group, count)      extern turf::TraceGroup::Counter Trace_##group[count];
+#define TURF_TRACE_DECLARE(api, group, count)     api extern turf::TraceGroup::Counter Trace_##group[count];
 #define TURF_TRACE_DEFINE_BEGIN(group, count) turf::TraceGroup::Counter Trace_##group[count] = {
 #define TURF_TRACE_DEFINE(desc)                   { 0, desc },
 #define TURF_TRACE_DEFINE_END(group, count)   }; \

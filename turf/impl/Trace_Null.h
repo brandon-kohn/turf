@@ -27,7 +27,7 @@ struct TURF_API Trace_Null {
 } // namespace turf
 
 // clang-format off
-#define TURF_TRACE_DECLARE(group, count)
+#define TURF_TRACE_DECLARE(api, group, count)
 #define TURF_TRACE_DEFINE_BEGIN(group, count)
 #define TURF_TRACE_DEFINE(desc)
 #define TURF_TRACE_DEFINE_END(group, count)
