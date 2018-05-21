@@ -13,7 +13,11 @@
 #include <turf/Core.h>
 #include <turf/Heap.h>
 
-TURF_IMPL_HEAP_TYPE TurfHeap;
+TURF_API TURF_IMPL_HEAP_TYPE& TurfHeap()
+{
+    static TURF_IMPL_HEAP_TYPE instance;
+    return instance;
+}
 
 //---------------------------------------------------------------------------
 // Override operators new/delete
