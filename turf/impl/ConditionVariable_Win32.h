@@ -33,7 +33,7 @@ public:
 
     void timedWait(LockGuard<Mutex_Win32>& guard, ureg waitMillis) {
         if (waitMillis > 0)
-            SleepConditionVariableCS(&m_condVar, &guard.getMutex().m_mutex, waitMillis);
+            SleepConditionVariableCS(&m_condVar, &guard.getMutex().m_mutex, static_cast<DWORD>(waitMillis));
     }
 
     void wakeOne() {

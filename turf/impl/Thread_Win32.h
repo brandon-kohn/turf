@@ -53,7 +53,7 @@ public:
     }
 
     static void sleepMillis(ureg millis) {
-        Sleep(millis);
+        Sleep(static_cast<DWORD>(millis));
     }
 };
 
