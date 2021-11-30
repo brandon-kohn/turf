@@ -33,6 +33,10 @@
         // x86
         #define TURF_CPU_X86 1
         #define TURF_PTR_SIZE 4
+    #elif defined(_M_ARM64)
+        // x86
+        #define TURF_CPU_ARM64 1
+        #define TURF_PTR_SIZE 8
     #else
         #error "Unrecognized platform!"
     #endif

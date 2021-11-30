@@ -16,6 +16,10 @@
 #include <turf/Core.h>
 #include <turf/Util.h>
 
+#if TURF_CPU_ARM64
+#include <processthreadsapi.h>
+#endif
+
 namespace turf {
 
 class TID_Win32 {
@@ -29,6 +33,8 @@ public:
         return ((DWORD*) __readgsqword(48))[18]; // Read directly from the TIB
 #elif TURF_CPU_X86 // Windows x86
         return ((DWORD*) __readfsdword(24))[9]; // Read directly from the TIB
+#elif TURF_CPU_ARM64
+        return GetCurrentThreadId();
 #else
         return GetCurrentThreadID();
 #endif
@@ -39,6 +45,8 @@ public:
         return ((DWORD*) __readgsqword(48))[16]; // Read directly from the TIB
 #elif TURF_CPU_X86         // Windows x86
         return ((DWORD*) __readfsdword(24))[8]; // Read directly from the TIB
+#elif TURF_CPU_ARM64
+        return GetCurrentProcessId();
 #elif TURF_TARGET_XBOX_360 // Xbox 360
         return 0;
 #else
