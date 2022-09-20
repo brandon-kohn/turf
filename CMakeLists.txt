@@ -93,6 +93,15 @@ else()
     WriteFileIfDifferent("// TURF_USERCONFIG was left blank. This is a placeholder file.\n" "${CMAKE_CURRENT_BINARY_DIR}/include/turf/turf_userconfig.h" TURF_FILES)
 endif()
 
+if(MSVC AND NOT "${FORCE_MSVC_RUNTIME}" STREQUAL "")
+    message(STATUS "turf: Forcing msvc runtime to ${FORCE_MSVC_RUNTIME}")
+    force_msvc_runtime()
+endif()
+if(MSVC AND NOT "${FORCE_MSVC_DEBUG_DEFINE}" STREQUAL "")
+    message(STATUS "turf: Forcing msvc debug define to ${FORCE_MSVC_DEBUG_DEFINE}")
+    force_msvc_debug_define()
+endif()
+
 # Define library target.
 project(turf)
 
