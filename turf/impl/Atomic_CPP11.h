@@ -35,7 +35,7 @@ enum MemoryOrder {
     Consume = static_cast<std::underlying_type_t<std::memory_order>>(std::memory_order_consume),
     Acquire = static_cast<std::underlying_type_t<std::memory_order>>(std::memory_order_acquire),
     Release = static_cast<std::underlying_type_t<std::memory_order>>(std::memory_order_release),
-    ConsumRelease = static_cast<std::underlying_type_t<std::memory_order>>(std::memory_order_acq_rel),
+    ConsumeRelease = static_cast<std::underlying_type_t<std::memory_order>>(std::memory_order_acq_rel),
     AcquireRelease = static_cast<std::underlying_type_t<std::memory_order>>(std::memory_order_acq_rel),
 };
 
